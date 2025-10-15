@@ -205,12 +205,13 @@ app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
 });
 
-app.listen(PORT, (err) => {
-  if (err) {
-    console.error('Failed to start server:', err);
-    process.exit(1);
-  }
-  console.log(`Server running on port ${PORT}`);
-  console.log(`Frontend will be available at http://localhost:3000`);
-  console.log(`API will be available at http://localhost:${PORT}`);
-});
+// app.listen(PORT, (err) => {
+//   if (err) {
+//     console.error('Failed to start server:', err);
+//     process.exit(1);
+//   }
+//   console.log(`Server running on port ${PORT}`);
+//   console.log(`Frontend will be available at http://localhost:3000`);
+//   console.log(`API will be available at http://localhost:${PORT}`);
+// });
+module.exports = app;
