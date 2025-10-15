@@ -5,7 +5,6 @@ setup-database.js
 QUICK_START.md
 
 # Production builds
-client/build/
 dist/
 
 # Environment variables
