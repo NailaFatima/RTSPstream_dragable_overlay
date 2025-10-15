@@ -7,6 +7,19 @@ require('dotenv').config();
 const app = express();
 const PORT = process.env.PORT || 5001;
 
+
+const allowedOrigins = [
+  "http://localhost:3001", // ✅ Local dev
+  "https://myportfolio-frontend.vercel.app" // ✅ Your deployed frontend
+];
+
+app.use(cors({
+  origin: allowedOrigins,
+  methods: ["GET", "POST"],
+  credentials: true,
+}));
+
+
 // Middleware
 app.use(cors());
 app.use(express.json());
