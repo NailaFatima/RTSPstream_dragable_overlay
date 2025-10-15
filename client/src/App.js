@@ -5,8 +5,6 @@ import OverlayManager from './components/OverlayManager';
 import Footer from './components/Footer';
 import './App.css';
 
-import.meta.env.REACT_APP_API_URL = undefined;
-
 function App() {
   const [currentView, setCurrentView] = useState('home');
   const [overlays, setOverlays] = useState([]);
@@ -18,7 +16,7 @@ function App() {
 
   const fetchOverlays = async () => {
     try {
-      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/overlays`);
+      const response = await fetch('/api/overlays');
       const data = await response.json();
       setOverlays(Array.isArray(data) ? data : []);
     } catch (error) {
@@ -29,7 +27,7 @@ function App() {
 
   const handleCreateOverlay = async (overlayData) => {
     try {
-      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/overlays`, {
+      const response = await fetch('/api/overlays', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -47,7 +45,7 @@ function App() {
 
   const handleUpdateOverlay = async (id, overlayData) => {
     try {
-      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/overlays/${id}`, {
+      const response = await fetch(`/api/overlays/${id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -67,7 +65,7 @@ function App() {
 
   const handleDeleteOverlay = async (id) => {
     try {
-      await fetch(`${process.env.REACT_APP_API_URL}/api/overlays/${id}`, {
+      await fetch(`/api/overlays/${id}`, {
         method: 'DELETE',
       });
       setOverlays(prev => (Array.isArray(prev) ? prev : []).filter(overlay => overlay._id !== id));
