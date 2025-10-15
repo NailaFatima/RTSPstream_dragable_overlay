@@ -1,0 +1,168 @@
+.overlay-list {
+  width: 100%;
+}
+
+.list-header {
+  margin-bottom: 30px;
+}
+
+.list-header h3 {
+  color: white;
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.empty-icon {
+  font-size: 4rem;
+  margin-bottom: 20px;
+}
+
+.empty-state h3 {
+  color: white;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.empty-state p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.overlay-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 25px;
+}
+
+.overlay-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  padding: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.overlay-card:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.overlay-preview {
+  height: 120px;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 15px;
+  background: rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.image-preview {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.image-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.image-error {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.9rem;
+}
+
+.image-error span:first-child {
+  font-size: 2rem;
+  margin-bottom: 8px;
+}
+
+.text-preview {
+  padding: 15px;
+  text-align: center;
+  word-wrap: break-word;
+  max-width: 100%;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 60px;
+}
+
+.overlay-info {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.overlay-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.overlay-type {
+  font-weight: 500;
+}
+
+.overlay-size {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 0.8rem;
+}
+
+.overlay-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-sm {
+  padding: 8px 16px;
+  font-size: 13px;
+  border-radius: 8px;
+  flex: 1;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .overlay-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .overlay-card {
+    padding: 15px;
+  }
+  
+  .overlay-preview {
+    height: 100px;
+  }
+  
+  .overlay-actions {
+    flex-direction: column;
+  }
+  
+  .btn-sm {
+    width: 100%;
+  }
+}
+
