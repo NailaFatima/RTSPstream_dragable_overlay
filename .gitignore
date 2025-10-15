@@ -2,7 +2,7 @@
 node_modules/
 client/node_modules/
 setup-database.js
-public
+QUICK_START.md
 
 # Production builds
 client/build/
