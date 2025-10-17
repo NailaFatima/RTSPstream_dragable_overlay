@@ -16,7 +16,7 @@ function App() {
 
   const fetchOverlays = async () => {
     try {
-      const response = await fetch('/api/overlays');
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/overlays`);
       const data = await response.json();
       setOverlays(Array.isArray(data) ? data : []);
     } catch (error) {
