@@ -10,7 +10,7 @@ const PORT = process.env.PORT || 5001;
 
 const allowedOrigins = [
   "http://localhost:3001", // ✅ Local dev
-  "https://rtsp-stream-dragable-overlay.vercel.app/" // ✅ Your deployed frontend
+  "https://rtspstream-dragable-overlay-backend.vercel.app" // ✅ Your deployed frontend
 ];
 
 app.use(cors({
@@ -22,7 +22,6 @@ app.use(cors({
 
 
 // Middleware
-//app.use(cors());
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'client/build')));
 

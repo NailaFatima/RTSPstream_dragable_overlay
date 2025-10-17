@@ -10,8 +10,8 @@ function App() {
   const [overlays, setOverlays] = useState([]);
   const [streamUrl, setStreamUrl] = useState('');
 
-  useEffect(() => {
-    fetchOverlays();
+  useEffect(async () => {
+    await fetchOverlays();
   }, []);
 
   const fetchOverlays = async () => {
