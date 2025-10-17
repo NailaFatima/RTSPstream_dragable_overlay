@@ -7,9 +7,9 @@
     }
   ],
   "routes": [
-
-    { "src": "/api/(.*)", "dest": "/server.js" },
-    { "src": "/(.*)", "dest": "/client/build/index.html" }
-
+    {
+      "src": "/(.*)",
+      "dest": "server.js"
+    }
   ]
 }
