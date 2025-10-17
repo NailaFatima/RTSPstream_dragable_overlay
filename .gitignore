@@ -3,6 +3,7 @@ node_modules/
 client/node_modules/
 setup-database.js
 QUICK_START.md
+src/api.js
 
 # Production builds
 dist/
