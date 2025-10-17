@@ -221,9 +221,9 @@ app.get('/api/overlays/:id', async (req, res) => {
 });
 
 // Serve React app
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
-});
+// app.get('*', (req, res) => {
+//   res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
+// });
 
 // app.listen(PORT, (err) => {
 //   if (err) {
