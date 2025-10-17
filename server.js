@@ -15,15 +15,17 @@ const allowedOrigins = [
 
 app.use(cors({
   origin: allowedOrigins,
-  methods: ["GET", "POST"],
+  methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true,
 }));
 
 
+
 // Middleware
-app.use(cors());
+//app.use(cors());
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'client/build')));
+
 
 // MongoDB connection
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/streamview', {
@@ -83,6 +85,11 @@ const Overlay = mongoose.model('Overlay', overlaySchema);
 // In-memory storage fallback
 let inMemoryOverlays = [];
 let nextId = 1;
+//logging
+app.use((req, res, next) => {
+  console.log(`[${req.method}] ${req.originalUrl}`);
+  next();
+});
 
 // API Routes
 
