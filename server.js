@@ -28,7 +28,7 @@ app.use(express.static(path.join(__dirname, 'client/build')));
 
 
 // MongoDB connection
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/streamview', {
+mongoose.connect(process.env.MONGODB_URI || 'mongodb+srv://dbuser:root@cluster0.avqxm6z.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 }).catch(err => {
